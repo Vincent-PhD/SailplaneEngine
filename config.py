@@ -14,7 +14,7 @@ Optimisation_Method = "GeneticAlgorithm"
 
 # Define Optimisation Algorithm Hyperparameters
 
-GA_Hyperparameters = {"num_generations": 250, "num_parents_mating": 10}
+GA_Hyperparameters = {"num_generations": 500, "num_parents_mating": 2}
 
 # Define Plotting Configurations
 
