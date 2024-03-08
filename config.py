@@ -217,7 +217,7 @@ Gen_New_Candidate_Solutions = True
 
 # Define Number of Candidate Solutions
 
-N_Candidate_Solutions = 5000
+N_Candidate_Solutions = 34000
 
 # Define Path to Generated Candidate Airfoil Solutions
 
