@@ -14,7 +14,7 @@ Optimisation_Method = "GeneticAlgorithm"
 
 # Define Optimisation Engine [Scipy, PyGad]
 
-Optimisation_Engine = Scipy
+Optimisation_Engine = "Scipy"
 
 # Define Optimisation Algorithm Hyperparameters
 
