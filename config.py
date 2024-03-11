@@ -12,6 +12,10 @@ Airfoil_Performance_Analysis_Module = "XFOIL"
 
 Optimisation_Method = "GeneticAlgorithm"
 
+# Define Optimisation Engine [Scipy, PyGad]
+
+Optimisation_Engine = Scipy
+
 # Define Optimisation Algorithm Hyperparameters
 
 GA_Hyperparameters = {"num_generations": 500, "num_parents_mating": 2}
@@ -27,21 +31,21 @@ Plot_Performance_Curves = True
 V_Free_Stream = [
     224.29,
     213.85,
-    204.75,
-    193.04,
+    # 204.75,
+    # 193.04,
     180.16,
     167.18,
-    154.78,
-    144.78,
+    # 154.78,
+    # 144.78,
     135.25,
-    129.49,
-    125.38,
-    119.89,
+    # 129.49,
+    # 125.38,
+    # 119.89,
     112.15,
     105.73,
-    100.31,
-    95.64,
-    91.57,
+    # 100.31,
+    # 95.64,
+    # 91.57,
     88.66,
 ]
 
@@ -217,7 +221,7 @@ Gen_New_Candidate_Solutions = True
 
 # Define Number of Candidate Solutions
 
-N_Candidate_Solutions = 34000
+N_Candidate_Solutions = 10_000
 
 # Define Path to Generated Candidate Airfoil Solutions
 
@@ -299,27 +303,27 @@ _WINGLET = 5  # [% contribution at low speeds]
 # Define GAN-Generation Technique Model and Scaler Files
 
 BLSTM_Model_Path = (
-    "Models\\AirfoilGenerationModels\\MLModels\\pyfoilgen__blstm_model_6.h5"
+    "Models/AirfoilGenerationModels/MLModels/pyfoilgen__blstm_model_6.h5"
 )
 
-BLSTM_Scaler_Path = "Models\\AirfoilGenerationModels\\Scalers\\pyfoilgen_scaler.joblib"
+BLSTM_Scaler_Path = "Models/AirfoilGenerationModels/Scalers/pyfoilgen_scaler.joblib"
 
 Generator_Modle_Path = (
-    "Models\\AirfoilGenerationModels\\MLModels\\wgan_generator_0.9443675714351385.h5"
+    "Models/AirfoilGenerationModels/MLModels/wgan_generator_0.9443675714351385.h5"
 )
 
 Generator_Scaler_Path = (
-    "Models\\AirfoilGenerationModels\\Scalers\\wgan_generator_scaler.joblib"
+    "Models/AirfoilGenerationModels/Scalers/wgan_generator_scaler.joblib"
 )
 
 # Define Performance Tracking File Path
 
 Optimisation_Objective_Function_Tracking_Path = (
-    "Data\\OptimisationData\\PerformanceTracking.dat"
+    "Data/OptimisationData/PerformanceTracking.dat"
 )
 
 # Define Performance Tracking File Path
 
 Optimisation_Noise_Vector_Tracking_Path = (
-    "Data\\OptimisationData\\NoiseVectorTracking.dat"
+    "Data/OptimisationData/NoiseVectorTracking.dat"
 )

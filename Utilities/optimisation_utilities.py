@@ -219,6 +219,40 @@ def airfoil_thickness_distribution_penalty(x: np.array, weight):
         )
     return _AirfoilThicknessDistributionPenalty
 
+def airfoil_quality_penalty(X:np.array, Y: np.array, weight = 1e3):
+        
+    
+        x_upper = X[0 : int(len(X) / 2 + 1)]
+        y_upper = Y[0 : int(len(X) / 2 + 1)]
+
+        x_lower = X[int(len(X) / 2) :]
+        y_lower = Y[int(len(X) / 2) :]
+
+        """# Determine Critical Curvature Points"""
+
+        grad_top = []
+        grad_bot = []
+        top_grad_change = []
+        bot_grad_change = []
+
+        for i in range(1, len(x_upper)):
+            grad_top.append(((y_upper[i - 1] - y_upper[i]) / (x_upper[i - 1] - x_upper[i])))
+            grad_bot.append(((y_lower[i - 1] - y_lower[i]) / (x_lower[i - 1] - x_lower[i])))
+
+        for i in range(1, len(grad_top)):
+            if ((grad_top[i] < 0) & (grad_top[i - 1] > 0)) or (
+                (grad_top[i] > 0) & (grad_top[i - 1] < 0)
+            ):
+                top_grad_change.append(i)
+            if ((grad_bot[i] < 0) & (grad_bot[i - 1] > 0)) or (
+                (grad_bot[i] > 0) & (grad_bot[i - 1] < 0)
+            ):
+                bot_grad_change.append(i)
+
+        return grad_top, grad_bot, top_grad_change, bot_grad_change
+
+
+
 
 def determine_valid_constraints(ConstraintDictionary: dict, Sample: pd.DataFrame):
     TruthChecker = []

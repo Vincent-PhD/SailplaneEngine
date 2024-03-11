@@ -31,15 +31,15 @@ def define_optimisation_problem(
 ):
 
     initiate_empty_file(
-        FilePath="Data\\OptimisationData\\NoiseVectorTracking.dat",
+        FilePath="Data/OptimisationData/NoiseVectorTracking.dat",
         init_val=-1.000000000000000000e07,
     )
     initiate_empty_file(
-        FilePath="Data\\OptimisationData\\PerformanceTracking.dat",
+        FilePath="Data/OptimisationData/PerformanceTracking.dat",
         init_val=-1.000000000000000000e07,
     )
     initiate_empty_file(
-        FilePath="Data\\OptimisationData\\PenaltyTracking.dat",
+        FilePath="Data/OptimisationData/PenaltyTracking.dat",
         init_val=-1.000000000000000000e07,
     )
 
@@ -51,7 +51,7 @@ def define_optimisation_problem(
             )
         else:
             Candidate_Solutions = np.loadtxt(
-                "Data\\OptimisationData\\100_Candidate_Solutions.dat"
+                "Data/OptimisationData/100_Candidate_Solutions.dat"
             )
 
         # To prepare the initial population, there are 2 ways:
