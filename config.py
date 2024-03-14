@@ -14,11 +14,11 @@ Optimisation_Method = "GeneticAlgorithm"
 
 # Define Optimisation Engine [Scipy, PyGad]
 
-Optimisation_Engine = "Scipy"
+Optimisation_Engine = "PyGad"
 
 # Define Optimisation Algorithm Hyperparameters
 
-GA_Hyperparameters = {"num_generations": 500, "num_parents_mating": 2}
+GA_Hyperparameters = {"num_generations": 500, "num_parents_mating": 10}
 
 # Define Plotting Configurations
 
@@ -221,7 +221,7 @@ Gen_New_Candidate_Solutions = True
 
 # Define Number of Candidate Solutions
 
-N_Candidate_Solutions = 10_000
+N_Candidate_Solutions = 500
 
 # Define Path to Generated Candidate Airfoil Solutions
 

@@ -183,7 +183,7 @@ def get_wing_performance(ga_instance, solution, solution_idx):
     # airfoil_quality_penalty(X:np.array, Y: np.array, weight = 1e3)
 
 
-    if (_PlanformPenalty>0) or (_LengthPenalty>0) or (_Total_Airfoil_Penalty>0) or (_AirfoilThicknessDistributionPenalty>0):
+    if (_PlanformPenalty>0) or (_LengthPenalty>10000) or (_Total_Airfoil_Penalty>0) or (_AirfoilThicknessDistributionPenalty>0):
         return -1*(_PlanformPenalty+_LengthPenalty+_Total_Airfoil_Penalty+_AirfoilThicknessDistributionPenalty)
 
     else:
@@ -234,7 +234,7 @@ def get_wing_performance(ga_instance, solution, solution_idx):
             + _AirfoilThicknessDistributionPenalty
         )
 
-        performance_tracker = np.loadtxt(Optimisation_Objective_Function_Tracking_Path)
+    
 
         objective_tracker = np.loadtxt("Data/OptimisationData/PenaltyTracking.dat")
         objective_tracker = np.append(
@@ -247,6 +247,31 @@ def get_wing_performance(ga_instance, solution, solution_idx):
             ),
         )
         np.savetxt("Data/OptimisationData/PenaltyTracking.dat", objective_tracker)
+
+
+        # Load and apppend airfoil thickness distribution penalty
+
+
+        airfoil_thickness_distribution_performance_tracker = np.loadtxt("Data/OptimisationData/AirfoilThicknessDistributionPenaltyTracking.dat")
+        airfoil_thickness_distribution_performance_tracker = np.append(
+            airfoil_thickness_distribution_performance_tracker, _AirfoilThicknessDistributionPenalty,
+        )
+        np.savetxt("Data/OptimisationData/AirfoilThicknessDistributionPenaltyTracking.dat", airfoil_thickness_distribution_performance_tracker)
+
+
+        # Load and apppend airfoil shape penalty
+
+
+        airfoil_shape_performance_tracker = np.loadtxt("Data/OptimisationData/AirfoilShapePenaltyTracking.dat")
+        airfoil_shape_performance_tracker = np.append(
+            airfoil_shape_performance_tracker, _Total_Airfoil_Penalty,
+        )
+        np.savetxt("Data/OptimisationData/AirfoilShapePenaltyTracking.dat", airfoil_shape_performance_tracker)
+
+        # Load previous optimal performances
+
+
+        performance_tracker = np.loadtxt(Optimisation_Objective_Function_Tracking_Path)
 
         if obj_func > np.max(performance_tracker):
             performance_tracker = np.append(performance_tracker, obj_func)

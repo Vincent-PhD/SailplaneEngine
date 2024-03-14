@@ -35,12 +35,24 @@ def define_optimisation_problem(
         FilePath="Data/OptimisationData/NoiseVectorTracking.dat",
         init_val=-1.000000000000000000e07,
     )
+    
     initiate_empty_file(
         FilePath="Data/OptimisationData/PerformanceTracking.dat",
         init_val=-1.000000000000000000e07,
     )
     initiate_empty_file(
         FilePath="Data/OptimisationData/PenaltyTracking.dat",
+        init_val=-1.000000000000000000e07,
+    )
+
+
+    initiate_empty_file(
+        FilePath="Data/OptimisationData/AirfoilThicknessDistributionPenaltyTracking.dat",
+        init_val=-1.000000000000000000e07,
+    )
+
+    initiate_empty_file(
+        FilePath="Data/OptimisationData/AirfoilShapePenaltyTracking.dat",
         init_val=-1.000000000000000000e07,
     )
 
