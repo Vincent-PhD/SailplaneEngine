@@ -180,7 +180,7 @@ def get_wing_performance(ga_instance, solution, solution_idx):
 
     # Calculate Airfoil Quality Penalty
 
-    airfoil_quality_penalty(X:np.array, Y: np.array, weight = 1e3)
+    # airfoil_quality_penalty(X:np.array, Y: np.array, weight = 1e3)
 
 
     if (_PlanformPenalty>0) or (_LengthPenalty>0) or (_Total_Airfoil_Penalty>0) or (_AirfoilThicknessDistributionPenalty>0):
